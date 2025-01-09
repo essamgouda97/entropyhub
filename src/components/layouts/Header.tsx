@@ -56,14 +56,6 @@ const Header = () => {
             About Us
           </a>
           <a
-            href="#projects"
-            className={`${
-               "text-white"
-            } hover:scale-110`}
-          >
-            Projects
-          </a>
-          <a
             href="#contact"
             className={`${
                "text-white"
@@ -108,16 +100,6 @@ const Header = () => {
                 } hover:scale-110`}
               >
                 About Us
-              </a>
-            </li>
-            <li>
-              <a
-                href="#projects"
-                className={`${
-                   "text-white"
-                } hover:scale-110`}
-              >
-                Projects
               </a>
             </li>
             <li>

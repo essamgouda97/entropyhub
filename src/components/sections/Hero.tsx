@@ -16,15 +16,13 @@ const Hero = () => {
         </p>
         
         <div className="mt-10  ">
-        
-          <a
-            href="#contact"
-            className="px-6 py-4 bg-black bg-opacity-40 text-white text-3xl font-medium rounded-lg shadow hover:bg-black focus:ring-2 focus:outline-none"
-          >
-            Get Started
-           
-           
-          </a>
+        <a
+  href="#contact"
+  className="px-6 py-4 bg-black bg-opacity-30 text-white text-3xl font-medium rounded-lg shadow hover:bg-black focus:ring-2 focus:outline-none transition duration-[1500ms] ease-in-out"
+>
+  Get Started
+</a>
+
         
         </div>
        

@@ -20,9 +20,9 @@ export default function Example() {
 	return (
 		<section className=" bg-gradient-to-b from-black via-black to-transparent ">
 			<div className="container flex items-start justify-center min-h-screen px-4 mx-auto">
-				<div className="grid w-full grid-cols-1 max-w-[350px]">
+				<div className="grid w-full grid-cols-1 max-w-[350px]" >
 					{socials.map((s) => (
-						<Card>
+						<Card key={s.label}>
 							<Link
 								href={s.href}
 								target="_blank"

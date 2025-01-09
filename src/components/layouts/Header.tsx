@@ -30,7 +30,7 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-gradient-to-b from-black via-black to-transparent" : "bg-transparent"
+        isScrolled ? "bg-gradient-to-b from-black via-black to-transparent border-b border-zinc-500" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">

@@ -11,7 +11,7 @@ const Footer = () => {
     { icon: "☁️", title: "Cloud Solutions", description: "Scalable and secure cloud services for your business." },
   ]
   return (
-    <footer className="bg-gradient-to-b to-black via-black from-transparent  bg-opacity-10 py-10">
+    <footer className="bg-gradient-to-b to-black via-black from-transparent  bg-opacity-10 py-10 border-t border-zinc-500">
       <div className="container mx-auto flex flex-wrap justify-between text-white">
         {/* Logo Section */}
         <div className="w-full sm:w-1/4 mb-6 sm:mb-0">

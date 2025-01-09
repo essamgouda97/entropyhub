@@ -2,7 +2,7 @@ import React from 'react';
 
 const WhyChooseUs = () => {
   return (
-    <section className="mt-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-transparent">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-transparent container flex items-center justify-center min-h-screen">
       <div className="max-w-7xl mx-auto p-4 sm:px-6 lg:px-8 text-center bg-transparent rounded-lg">
         <h2 className="text-3xl font-bold text-[#78dce8] mb-4">Why Choose Us</h2>
         <p className="text-[#5bd0de] mb-8">Learn why we are the best choice for your business.</p>

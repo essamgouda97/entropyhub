@@ -16,12 +16,12 @@ const Services = () => {
     <section className="py-10 bg-gradient-to-b to-black from-transparent  bg-opacity-10">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 className="text-4xl font-semibold text-center text-[#78dce8] mb-8">Our Services</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {services.map((service, index) => (
           <Card>
            <div
             key={index}
-            className=" border bg-black bg-opacity-50 border-white p-6 rounded-lg shadow hover:shadow-md transition duration-300 text-center hover:scale-105"
+            className=" bg-black bg-opacity-60 p-6 rounded-lg  transition duration-300 text-center hover:scale-105"
           >
             <div className="text-5xl p-8">{service.icon}</div>
             <h3 className="text-2xl font-semibold text-[#78dce8]">{service.title}</h3>

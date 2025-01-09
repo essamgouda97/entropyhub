@@ -1,10 +1,10 @@
 module.exports.SITE = {
   name: 'Entropyhub',
 
-  origin: '',
+  origin: 'https://www.entropyhub.tech/',
   basePathname: '/',
   trailingSlash: false,
 
-  title: 'Entropyhub — Your website with Next.js + Tailwind CSS',
+  title: 'Entropyhub',
   description: '',
 };

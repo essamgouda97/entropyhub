@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { SITE } from '../config.js';
 import "./globals.css";
 import Header from '@/components/layouts/Header';
+import Footer from '@/components/layouts/Footer';
 
 export const metadata: Metadata = {
   title: {
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className="tracking-tight antialiased  dark:bg-slate-900">
       <Header/>
           <main>{children}</main>
+          <Footer/>
       </body>
     </html>
   );

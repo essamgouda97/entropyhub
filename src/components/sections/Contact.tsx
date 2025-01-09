@@ -1,5 +1,5 @@
 "use client";
-import { Github, Mail, Twitter } from "lucide-react";
+import { Mail,  } from "lucide-react";
 import Link from "next/link";
 import { Card } from "../ui/card";
 

@@ -2,7 +2,6 @@
 import {
 	motion,
 	useMotionTemplate,
-	useMotionValue,
 	useSpring,
 } from "framer-motion";
 

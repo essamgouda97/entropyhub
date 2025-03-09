@@ -25,7 +25,7 @@ const Footer = () => {
           <ul className="space-y-2">
           {services.map((service, index) => (
                     
-                      <li className=" ">{service.title}</li>
+                      <li className=" " key={index}>{service.title} </li>
                   ))}
           </ul>
         </div>
@@ -47,7 +47,6 @@ const Footer = () => {
           <ul className="space-y-2">
             <li>Email: entropyhub@tech.com</li>
             <li>Phone: +123-456-7890</li>
-            <li>Address: 1234 Main St, City</li>
             <li>Support: support@entropyhub.com</li>
           </ul>
         </div>

@@ -2,10 +2,10 @@ import React from 'react';
 
 const WhyChooseUs = () => {
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-transparent container flex items-center justify-center min-h-screen">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-transparent container flex items-center justify-center min-h-screen">
       <div className="max-w-7xl mx-auto p-4 sm:px-6 lg:px-8 text-center bg-transparent rounded-lg">
-        <h2 className="text-3xl font-bold text-[#78dce8] mb-4">Why Choose Us</h2>
-        <p className="text-[#5bd0de] mb-8">Learn why we are the best choice for your business.</p>
+        <h2 className="text-3xl font-bold text-teal-400 mb-4">Why Choose Us</h2>
+        <p className="text-white mb-8">Learn why we are the best choice for your business.</p>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
           {/* Left Items */}
           <div className="space-y-8">
@@ -19,8 +19,8 @@ const WhyChooseUs = () => {
                   <img src={item.icon} alt={item.title} className="w-20 h-auto mt-2" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-[#78dce8] text-start">{item.title}</h3>
-                  <p className="text-white text-start">{item.description}</p>
+                  <h3 className="text-2xl font-semibold text-teal-400 text-start">{item.title}</h3>
+                  <p className=" text-lg text-white text-start">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -47,15 +47,15 @@ const WhyChooseUs = () => {
                   <img src={item.icon} alt={item.title} className="w-20 h-auto mt-2" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-start text-[#78dce8]">{item.title}</h3>
-                  <p className="text-white text-start">{item.description}</p>
+                  <h3 className="text-2xl font-semibold text-start text-teal-400">{item.title}</h3>
+                  <p className="text-white text-l text-start">{item.description}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

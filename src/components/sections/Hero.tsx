@@ -7,8 +7,8 @@ const Hero = () => {
       className="relative h-screen w-screen flex items-center justify-start"
     >
       <div className="text-start  bg-opacity-50 text-white p-10 rounded-lg  max-w-4xl">
-        <h1 className="text-4xl md:text-8xl font-bold">
-          Transform Your Ideas Into Reality
+        <h1 className="text-4xl md:text-6xl font-bold">
+          Transform Your Business with Autonomous AI Agents
         </h1>
         <p className="mt-6 text-2xl">
           Our software solutions are designed to help your business innovate,

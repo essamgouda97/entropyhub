@@ -6,12 +6,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 interface HeaderProps {
   scrollToSection: (section: React.RefObject<HTMLElement>) => void;
   sections: {
-
+    problem: React.RefObject<HTMLElement>;
+    
     services: React.RefObject<HTMLElement>;
-
+    
     about: React.RefObject<HTMLElement>;
 
     contact: React.RefObject<HTMLElement>;
+
   };
 }
 

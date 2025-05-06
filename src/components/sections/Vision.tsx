@@ -1,22 +1,18 @@
+'use client';
 import React from 'react';
 
 export default function Vision() {
   return (
-    <section id="vision" className="py-28 bg-white" data-aos="fade-up">
-      <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 className="text-4xl font-bold text-indigo-700 mb-6">Our Vision</h2>
-          <p className="text-lg text-gray-700 leading-relaxed">
-            We aim to empower businesses with intelligent and intuitive data systems that reduce operational delays and make decision-making faster and smarter. Our tools serve as a bridge between raw data and actionable insight.
-          </p>
-        </div>
-        <div className="flex justify-center">
-          <img
-            src="/ourvision.jpg"
-            alt="Vision"
-            className="w-64 h-64 object-contain"
-          />
-        </div>
+    <section className="py-32 bg-white px-6">
+      <div className="max-w-5xl mx-auto text-center">
+        <p className="text-indigo-500 font-semibold uppercase tracking-wider mb-4">Our Vision</p>
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+          Empowering Businesses with Smarter AI
+        </h2>
+        <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+          We believe in AI that adapts, understands, and delivers accurate insights. Our Retrieval-Augmented Generation system
+          provides a dependable bridge between data and decisions—simplifying complexity for smarter outcomes.
+        </p>
       </div>
     </section>
   );

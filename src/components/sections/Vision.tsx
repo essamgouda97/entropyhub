@@ -12,9 +12,9 @@ export default function Vision() {
         </div>
         <div className="flex justify-center">
           <img
-            src="/icons/vision-icon.png"
+            src="/ourvision.jpg"
             alt="Vision"
-            className="w-48 h-48 object-contain"
+            className="w-64 h-64 object-contain"
           />
         </div>
       </div>

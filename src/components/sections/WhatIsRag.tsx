@@ -5,7 +5,7 @@ export default function WhatIsRag() {
     <section id="what-is-rag" className="py-28 bg-gray-50" data-aos="fade-up">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="flex justify-center">
-          <img src="/neuralnetwork.png" alt="RAG" className="w-48 h-48 object-contain" />
+          <img src="/whatisrag.jpg" alt="RAG" className="w-64 h-64 object-contain" />
         </div>
         <div>
           <h2 className="text-4xl font-bold text-indigo-700 mb-6">What is Retrieval-Augmented Generation?</h2>

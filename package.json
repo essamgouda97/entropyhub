@@ -11,6 +11,7 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@headlessui/react": "^2.2.2",
     "@mui/icons-material": "^6.3.1",
     "@mui/material": "^6.3.1",
     "@tsparticles/engine": "^3.7.1",
@@ -25,6 +26,7 @@
     "react-dom": "^18.3.1",
     "react-icons": "^5.5.0",
     "react-intersection-observer": "^9.16.0",
+    "react-parallax-tilt": "^1.7.295",
     "tailwindcss-bg-patterns": "^0.3.0",
     "tsparticles": "^3.7.1"
   },

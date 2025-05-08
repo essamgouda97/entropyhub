@@ -21,18 +21,19 @@ export default function Header({ scrollToSection, sections }: HeaderProps) {
   const [active, setActive] = useState<keyof SectionRefs>('vision');
   const [showHeader, setShowHeader] = useState(true);
 
-  // Scroll spy and header show/hide on scroll
+  // Scroll spy + header show/hide
   useEffect(() => {
     let lastY = window.scrollY;
     const onScroll = () => {
       const currentY = window.scrollY;
       setShowHeader(lastY > currentY || currentY < 100);
       lastY = currentY;
+
       for (const [key, ref] of Object.entries(sections) as [keyof SectionRefs, React.RefObject<HTMLElement>][]) {
         const el = ref.current;
         if (el) {
           const rect = el.getBoundingClientRect();
-          if (rect.top <= 100 && rect.bottom > 100) {
+          if (rect.top <= 120 && rect.bottom > 120) {
             setActive(key);
             break;
           }
@@ -49,6 +50,16 @@ export default function Header({ scrollToSection, sections }: HeaderProps) {
     scrollToSection(sections[key]);
   };
 
+  const navItems: [keyof SectionRefs, string][] = [
+    ['vision', 'Vision'],
+    ['whatIsRag', 'How It Works'],
+    ['whyChooseUs', 'Why Us'],
+    ['implementation', 'Process'],
+    ['team', 'Team'],
+    ['useCases', 'Use Cases'],
+    ['contact', 'Contact'],
+  ];
+
   return (
     <header
       className={`fixed w-full bg-white shadow-sm z-20 transition-transform duration-300 ${
@@ -56,31 +67,28 @@ export default function Header({ scrollToSection, sections }: HeaderProps) {
       }`}
     >
       <nav className="container mx-auto flex items-center justify-between py-4 px-6">
+        {/* Logo / Title */}
         <button onClick={handleClick('vision')} className="text-2xl font-bold text-indigo-700">
           AI Software Solution
         </button>
+
+        {/* Desktop Nav */}
         <ul className="hidden md:flex gap-8">
-          {(
-            [
-              ['vision', 'Vision'],
-              ['whatIsRag', 'How It Works'],
-              ['whyChooseUs', 'Why Us'],
-              ['implementation', 'Process'],
-              ['team', 'Team'],
-              ['useCases', 'Use Cases'],
-              ['contact', 'Contact'],
-            ] as [keyof SectionRefs, string][]
-          ).map(([key, label]) => (
+          {navItems.map(([key, label]) => (
             <li key={key}>
               <button
                 onClick={handleClick(key)}
-                className={`hover:text-blue-600 transition ${active === key ? 'text-blue-600 font-semibold' : ''}`}
+                className={`hover:text-blue-600 transition ${
+                  active === key ? 'text-blue-600 font-semibold' : ''
+                }`}
               >
                 {label}
               </button>
             </li>
           ))}
         </ul>
+
+        {/* Right Buttons */}
         <div className="flex items-center">
           <button
             onClick={handleClick('contact')}
@@ -88,25 +96,17 @@ export default function Header({ scrollToSection, sections }: HeaderProps) {
           >
             Start Pilot
           </button>
-          <button className="md:hidden px-2 py-1 focus:outline-none" onClick={() => setMenuOpen(o => !o)}>
+          <button className="md:hidden px-2 py-1" onClick={() => setMenuOpen((o) => !o)}>
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 8h16M4 16h16" />
             </svg>
           </button>
         </div>
+
+        {/* Mobile Menu */}
         {menuOpen && (
           <ul className="md:hidden absolute top-full left-0 w-full bg-white shadow mt-2 flex flex-col items-center gap-4 py-4">
-            {(
-              [
-                ['vision', 'Vision'],
-                ['whatIsRag', 'How It Works'],
-                ['whyChooseUs', 'Why Us'],
-                ['implementation', 'Process'],
-                ['team', 'Team'],
-                ['useCases', 'Use Cases'],
-                ['contact', 'Contact'],
-              ] as [keyof SectionRefs, string][]
-            ).map(([key, label]) => (
+            {navItems.map(([key, label]) => (
               <li key={key}>
                 <button onClick={handleClick(key)} className="hover:text-blue-600 transition">
                   {label}

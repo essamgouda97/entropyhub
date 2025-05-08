@@ -36,9 +36,11 @@ export default function Hero() {
         {/* Call-to-Action Button */}
         <a
           href="#contact"
-          className="inline-block bg-gradient-to-r from-indigo-600 to-blue-500 text-white font-semibold px-8 py-3 rounded-full transition duration-300 ease-out hover:scale-105 active:scale-95"
+          className="relative inline-block px-8 py-3 font-semibold text-white border-2 border-indigo-600 rounded-full overflow-hidden group transition-transform duration-300 ease-out active:scale-95"
         >
-          Start Building →
+          <span className="relative z-10 transition-colors duration-300 group-hover:text-indigo-600">Start Building →</span>
+          <span className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-blue-500 transition-transform duration-500 ease-in-out group-hover:-translate-y-full"></span>
+          <span className="absolute inset-0 bg-white transition-transform duration-500 ease-in-out -translate-y-full group-hover:translate-y-0"></span>
         </a>
       </div>
 

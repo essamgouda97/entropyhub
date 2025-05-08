@@ -95,7 +95,7 @@ export default function Hero() {
           <span className="block bg-gradient-to-r from-indigo-400 to-blue-400 bg-clip-text text-transparent">
             AI-Powered
           </span>
-          <span className="block pt-2">
+          <span className="block pt-2 pb-[0.2em]">
             Knowledge Retrieval
           </span>
         </motion.h1>

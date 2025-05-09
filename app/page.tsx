@@ -54,6 +54,7 @@ export default function Home() {
       <Header
         scrollToSection={scrollToSection}
         sections={{
+          hero:     heroRef,
           vision: visionRef,
           whatIsRag: whatIsRagRef,
           whyChooseUs: whyChooseUsRef,

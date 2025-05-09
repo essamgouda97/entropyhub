@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 
 export type SectionRefs = {
+  hero: React.RefObject<HTMLElement>;
   vision: React.RefObject<HTMLElement>;
   whatIsRag: React.RefObject<HTMLElement>;
   whyChooseUs: React.RefObject<HTMLElement>;
@@ -68,7 +69,7 @@ export default function Header({ scrollToSection, sections }: HeaderProps) {
     >
       <nav className="container mx-auto flex items-center justify-between py-4 px-6">
         {/* Logo / Title */}
-        <button onClick={handleClick('vision')} className="text-2xl font-bold text-indigo-700">
+        <button onClick={handleClick('hero')} className="text-2xl font-bold text-indigo-700">
           AI Software Solution
         </button>
 

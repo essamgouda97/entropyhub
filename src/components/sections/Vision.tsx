@@ -12,14 +12,14 @@ export default function Vision() {
       </div>
 
       <div className="max-w-6xl mx-auto text-center z-10 relative">
-        {/* Header */}
-        <p className="text-indigo-600 font-semibold uppercase tracking-wide mb-4 text-lg">
+        {/* Header - Font styling matched */}
+        <p className="text-sm font-semibold uppercase tracking-wider mb-4 bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent">
           Our Vision
         </p>
-        <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-10">
+        <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-slate-900 to-slate-800 bg-clip-text text-transparent mb-10">
           Smarter Data, Faster Decisions
         </h2>
-        <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-20">
+        <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-20">
           We help businesses unlock knowledge instantly using AI-powered retrieval. With RAG, teams work faster, stay focused, and make smarter decisions — without digging through endless documents.
         </p>
 
@@ -67,8 +67,8 @@ function VisionItem({
           <Icon className="w-8 h-8" />
         </div>
       </div>
-      <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
-      <p className="text-gray-600 text-sm">{text}</p>
+      <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
+      <p className="text-gray-600 text-lg leading-relaxed">{text}</p>
     </div>
   );
 }

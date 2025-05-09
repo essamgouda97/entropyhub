@@ -1,78 +1,103 @@
 'use client';
-import React from 'react';
+import { motion } from 'framer-motion';
+import { Scale, Users, BrainCircuit, MessageSquare, ShoppingBag, HeartPulse } from 'lucide-react';
+
+const useCases = [
+  {
+    icon: Scale,
+    title: "Legal Research Acceleration",
+    description: "Instant case law retrieval and summary generation for legal teams",
+    color: "from-purple-400 to-indigo-500"
+  },
+  {
+    icon: Users,
+    title: "Intelligent Recruitment",
+    description: "AI-powered candidate matching and interview question generation",
+    color: "from-blue-400 to-cyan-500"
+  },
+  {
+    icon: BrainCircuit,
+    title: "Strategic Decision Support",
+    description: "Real-time insights generation from corporate data repositories",
+    color: "from-green-400 to-emerald-500"
+  },
+  {
+    icon: MessageSquare,
+    title: "Customer Support AI",
+    description: "Instant knowledge retrieval for personalized customer responses",
+    color: "from-yellow-400 to-amber-500"
+  },
+  {
+    icon: ShoppingBag,
+    title: "E-commerce Personalization",
+    description: "Behavior-based product recommendation engine",
+    color: "from-pink-400 to-rose-500"
+  },
+  {
+    icon: HeartPulse,
+    title: "Clinical Intelligence",
+    description: "Medical research analysis and patient care optimization",
+    color: "from-teal-400 to-sky-500"
+  }
+];
 
 export default function UseCases() {
   return (
-    <section id="use-cases" className="py-28 bg-gray-100">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-indigo-700 text-center mb-16">How Our Solution Can Help Your Business</h2>
-        
-        <div className="flex flex-wrap justify-center gap-8">
-          {/* Law Firm Use Case */}
-          <div className="w-full sm:w-1/2 lg:w-1/3 bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
-            <div className="flex items-center mb-4">
-              <div className="bg-indigo-100 p-3 rounded-full text-4xl">⚖️</div>
-              <h3 className="ml-4 text-xl font-semibold">Accelerate Legal Research</h3>
-            </div>
-            <p className="text-gray-600">
-              Law firms deal with vast amounts of legal data. With our solution, legal teams can quickly retrieve relevant case law and generate accurate summaries, saving hours of manual research.
-            </p>
-          </div>
+    <section className="relative py-32 bg-gradient-to-br from-blue-50 to-indigo-50 px-6 overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-purple-100 rounded-full blur-[100px] opacity-30"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-100 rounded-full blur-[100px] opacity-30"></div>
+      </div>
 
-          {/* HR Department Use Case */}
-          <div className="w-full sm:w-1/2 lg:w-1/3 bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
-            <div className="flex items-center mb-4">
-              <div className="bg-blue-100 p-3 rounded-full text-4xl">📑</div>
-              <h3 className="ml-4 text-xl font-semibold">Streamline Recruitment</h3>
-            </div>
-            <p className="text-gray-600">
-              HR teams can instantly analyze resumes, match candidates to job descriptions, and generate personalized interview questions, improving hiring efficiency and accuracy.
-            </p>
-          </div>
+      <div className="max-w-7xl mx-auto text-center relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-sm font-semibold uppercase tracking-wider mb-4 bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent">
+            Industry Applications
+          </p>
+          <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-slate-900 to-slate-800 bg-clip-text text-transparent mb-16">
+            Transformative Business Solutions
+            <br />
+            Powered by AI
+          </h2>
+        </motion.div>
 
-          {/* Corporate Decision-Making Use Case */}
-          <div className="w-full sm:w-1/2 lg:w-1/3 bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
-            <div className="flex items-center mb-4">
-              <div className="bg-green-100 p-3 rounded-full text-4xl">📊</div>
-              <h3 className="ml-4 text-xl font-semibold">Improve Decision-Making</h3>
-            </div>
-            <p className="text-gray-600">
-              Corporate teams can quickly retrieve relevant reports and generate insights, allowing for faster and more informed decision-making.
-            </p>
-          </div>
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {useCases.map((useCase, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="group relative text-left bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300"
+            >
+              {/* Gradient border effect */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r p-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className={`absolute inset-0 bg-gradient-to-r ${useCase.color} rounded-2xl opacity-30`} />
+              </div>
 
-          {/* Customer Support Use Case */}
-          <div className="w-full sm:w-1/2 lg:w-1/3 bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
-            <div className="flex items-center mb-4">
-              <div className="bg-yellow-100 p-3 rounded-full text-4xl">🤖</div>
-              <h3 className="ml-4 text-xl font-semibold">Enhance Response Times</h3>
-            </div>
-            <p className="text-gray-600">
-              Customer support teams can automatically retrieve the most relevant articles and generate personalized responses instantly, improving customer satisfaction.
-            </p>
-          </div>
+              <div className="relative">
+                <div className={`mb-6 w-fit p-4 rounded-xl bg-gradient-to-r ${useCase.color}`}>
+                  <useCase.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors">
+                  {useCase.title}
+                </h3>
+                <p className="text-gray-600 text-lg leading-relaxed group-hover:text-gray-700 transition-colors">
+                  {useCase.description}
+                </p>
+              </div>
 
-          {/* E-commerce Business Use Case */}
-          <div className="w-full sm:w-1/2 lg:w-1/3 bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
-            <div className="flex items-center mb-4">
-              <div className="bg-purple-100 p-3 rounded-full text-4xl">🛒</div>
-              <h3 className="ml-4 text-xl font-semibold">Personalized Recommendations</h3>
-            </div>
-            <p className="text-gray-600">
-              E-commerce businesses can analyze customer behavior and automatically generate product recommendations, creating a personalized shopping experience that drives conversions.
-            </p>
-          </div>
-
-          {/* Healthcare Use Case */}
-          <div className="w-full sm:w-1/2 lg:w-1/3 bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
-            <div className="flex items-center mb-4">
-              <div className="bg-teal-100 p-3 rounded-full text-4xl">🩺</div>
-              <h3 className="ml-4 text-xl font-semibold">Improve Patient Care</h3>
-            </div>
-            <p className="text-gray-600">
-              Healthcare providers can quickly retrieve patient data, analyze medical research, and generate clinical recommendations based on the latest findings, improving patient care.
-            </p>
-          </div>
+              {/* Subtle background hover effect */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/50 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none" />
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

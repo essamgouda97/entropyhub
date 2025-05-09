@@ -1,42 +1,84 @@
 'use client';
-import React from 'react';
+import { motion } from 'framer-motion';
+import { Rocket, Zap, LifeBuoy } from 'lucide-react';
 
 const features = [
   {
-    emoji: '🔌',
+    icon: Rocket,
     title: 'Seamless Integration',
-    description:
-      'Connect with your existing systems effortlessly using modern APIs and flexible architecture.',
+    description: 'Connect with your existing systems effortlessly using modern APIs and flexible architecture.',
+    color: 'from-purple-400 to-indigo-500'
   },
   {
-    emoji: '⚡',
+    icon: Zap,
     title: 'High Performance',
-    description:
-      'Experience fast, reliable data retrieval and intelligent generation at enterprise scale.',
+    description: 'Experience fast, reliable data retrieval and intelligent generation at enterprise scale.',
+    color: 'from-blue-400 to-cyan-500'
   },
   {
-    emoji: '🧠',
+    icon: LifeBuoy,
     title: 'Expert Support',
-    description:
-      'Get guidance from seasoned engineers to ensure smooth deployment and tailored solutions.',
+    description: 'Get guidance from seasoned engineers to ensure smooth deployment and tailored solutions.',
+    color: 'from-green-400 to-emerald-500'
   },
 ];
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-32 bg-white px-6">
-      <div className="max-w-6xl mx-auto text-center">
-        <p className="text-indigo-500 font-semibold uppercase tracking-wider mb-4">Why Choose Us</p>
-        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-16">
-          Designed for teams that value speed and simplicity
-        </h2>
-        <div className="grid gap-12 md:grid-cols-3">
+    <section className="relative py-32 bg-gradient-to-br from-blue-50 to-indigo-50 px-6 overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-purple-100 rounded-full blur-[100px] opacity-30"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-100 rounded-full blur-[100px] opacity-30"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto text-center relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-sm font-semibold uppercase tracking-wider mb-4 bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent">
+            Why Choose EntropyHub
+          </p>
+          <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-slate-900 to-slate-800 bg-clip-text text-transparent mb-16">
+            Built for modern
+            <br />
+            AI-driven teams
+          </h2>
+        </motion.div>
+
+        <div className="grid gap-8 md:grid-cols-3">
           {features.map((feature, index) => (
-            <div key={index} className="text-left bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-md transition">
-              <div className="text-4xl mb-4">{feature.emoji}</div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-900">{feature.title}</h3>
-              <p className="text-gray-600 text-base">{feature.description}</p>
-            </div>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              className="group relative text-left bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300"
+            >
+              {/* Gradient border effect */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r p-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className={`absolute inset-0 bg-gradient-to-r ${feature.color} rounded-2xl opacity-30`} />
+              </div>
+
+              <div className="relative">
+                <div className={`mb-6 w-fit p-4 rounded-xl bg-gradient-to-r ${feature.color}`}>
+                  <feature.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 text-lg leading-relaxed group-hover:text-gray-700 transition-colors">
+                  {feature.description}
+                </p>
+              </div>
+
+              {/* Subtle background hover effect */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/50 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none" />
+            </motion.div>
           ))}
         </div>
       </div>

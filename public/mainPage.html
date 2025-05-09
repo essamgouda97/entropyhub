@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Software Solution</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    body { background-color: #f7f8fa; }
+    .fade-in { animation: fadeIn 1s ease-in-out both; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-800 scroll-smooth">
+
+  <!-- Header -->
+  <header class="sticky top-0 bg-white shadow-sm z-20">
+    <nav class="container mx-auto flex items-center justify-between py-4 px-6">
+      <a href="#" class="text-2xl font-bold text-indigo-700">AI Software Solution</a>
+      <ul class="hidden md:flex gap-8">
+        <li><a href="#vision" class="hover:text-blue-600">Vision</a></li>
+        <li><a href="#what-is-rag" class="hover:text-blue-600">How It Works</a></li>
+        <li><a href="#why-choose-us" class="hover:text-blue-600">Why Us</a></li>
+        <li><a href="#implementation" class="hover:text-blue-600">Process</a></li>
+        <li><a href="#team" class="hover:text-blue-600">Team</a></li>
+        <li><a href="#use-cases" class="hover:text-blue-600">Use Cases</a></li>
+
+        <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+      </ul>
+      <div class="flex items-center">
+        <a href="#contact" class="hidden md:inline-block bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700 transition mr-4">Start Pilot</a>
+        <button class="md:hidden px-2 py-1 focus:outline-none" onclick="document.getElementById('mainMenu').classList.toggle('hidden')">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-r from-indigo-600 to-blue-600 text-white py-24 overflow-hidden">
+    <div class="container mx-auto text-center px-6" data-aos="fade-up">
+      <h1 class="text-5xl font-extrabold mb-4">Unlock Your Data Potential</h1>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">Imagine asking any question and getting precise answers in seconds—powered by our proprietary RAG AI.</p>
+      <a href="#contact" class="inline-block bg-white text-blue-600 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition">Start Your Pilot</a>
+    </div>
+    <div class="absolute bottom-0 w-full">
+      <svg viewBox="0 0 1440 320" class="w-full h-24">
+        <path fill="#f7f8fa" fill-opacity="1" d="M0,160L60,149.3C120,139,240,117,360,122.7C480,128,600,160,720,170.7C840,181,960,171,1080,160C1200,149,1320,139,1380,133.3L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Vision Section -->
+  <section id="vision" class="py-28 bg-white" data-aos="fade-up">
+    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-4xl font-bold text-indigo-700 mb-6">Our Vision</h2>
+        <p class="text-lg text-gray-700 leading-relaxed">We aim to empower businesses with intelligent and intuitive data systems that reduce operational delays and make decision-making faster and smarter. Our tools serve as a bridge between raw data and actionable insight.</p>
+      </div>
+      <div class="flex justify-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Vision" class="w-48 h-48 object-contain">
+      </div>
+    </div>
+  </section>
+
+  <!-- What is RAG Section -->
+  <section id="what-is-rag" class="py-28 bg-gray-50" data-aos="fade-up">
+    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="flex justify-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/3405/3405808.png" alt="RAG" class="w-48 h-48 object-contain">
+      </div>
+      <div>
+        <h2 class="text-4xl font-bold text-indigo-700 mb-6">What is Retrieval-Augmented Generation?</h2>
+        <p class="text-lg text-gray-700 leading-relaxed">Retrieval-Augmented Generation (RAG) is a cutting-edge AI framework combining search and generation. It retrieves relevant data and generates accurate responses, ideal for knowledge management.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section id="why-choose-us" class="py-28 bg-white" data-aos="fade-up">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-indigo-700 text-center mb-16">Why Choose Our Solution?</h2>
+      <div class="flex flex-wrap justify-center gap-8">
+        <div class="w-full sm:w-1/2 lg:w-1/3 bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+          <div class="flex items-center mb-4">
+            <div class="bg-indigo-100 p-3 rounded-full"><img src="https://cdn-icons-png.flaticon.com/512/2910/2910763.png" alt="Integration icon" class="w-6 h-6"></div>
+            <h3 class="ml-4 text-xl font-semibold">Seamless Integration</h3>
+          </div>
+          <p class="text-gray-600">Integrate our RAG system with your existing tools and workflows with minimal effort.</p>
+        </div>
+        <div class="w-full sm:w-1/2 lg:w-1/3 bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+          <div class="flex items-center mb-4">
+            <div class="bg-green-100 p-3 rounded-full"><img src="https://cdn-icons-png.flaticon.com/512/2910/2910831.png" alt="Performance icon" class="w-6 h-6"></div>
+            <h3 class="ml-4 text-xl font-semibold">High Performance</h3>
+          </div>
+          <p class="text-gray-600">Enjoy fast, reliable data retrieval and response generation at enterprise scale.</p>
+        </div>
+        <div class="w-full sm:w-1/2 lg:w-1/3 bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+          <div class="flex items-center mb-4">
+            <div class="bg-yellow-100 p-3 rounded-full"><img src="https://cdn-icons-png.flaticon.com/512/2910/2910772.png" alt="Support icon" class="w-6 h-6"></div>
+            <h3 class="ml-4 text-xl font-semibold">Expert Support</h3>
+          </div>
+          <p class="text-gray-600">Our team provides dedicated support and customization for your business needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Implementation Process Section -->
+  <section id="implementation" class="py-28 bg-gray-50" data-aos="fade-up">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-indigo-700 text-center mb-16">Our Implementation Process</h2>
+      <div class="relative">
+        <div class="border-l-2 border-indigo-200 absolute h-full left-1/2 transform -translate-x-1/2"></div>
+        <div class="space-y-12">
+          <!-- Step 1 -->
+          <div class="flex flex-col md:flex-row items-center fade-in">
+            <div class="md:w-1/2 md:pr-8 text-right">
+              <div class="inline-block bg-indigo-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl mb-4">1</div>
+              <h3 class="text-2xl font-semibold">Discovery</h3>
+              <p class="text-gray-600">We analyze your needs, data sources, and goals to tailor the solution.</p>
+            </div>
+            <div class="md:w-1/2">
+              <img src="https://cdn-icons-png.flaticon.com/512/2910/2910795.png" alt="Discovery" class="w-40 mx-auto">
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="flex flex-col md:flex-row items-center fade-in">
+            <div class="md:w-1/2 order-2 md:order-1">
+              <img src="https://cdn-icons-png.flaticon.com/512/2910/2910585.png" alt="Integration" class="w-40 mx-auto">
+            </div>
+            <div class="md:w-1/2 md:pl-8 order-1 md:order-2 text-left">
+              <div class="inline-block bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl mb-4">2</div>
+              <h3 class="text-2xl font-semibold">Integration</h3>
+              <p class="text-gray-600">Seamlessly connect your data sources and configure the RAG pipeline.</p>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="flex flex-col md:flex-row items-center fade-in">
+            <div class="md:w-1/2 md:pr-8 text-right">
+              <div class="inline-block bg-yellow-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl mb-4">3</div>
+              <h3 class="text-2xl font-semibold">Testing & Validation</h3>
+              <p class="text-gray-600">Rigorous testing ensures accuracy, performance, and user satisfaction.</p>
+            </div>
+            <div class="md:w-1/2">
+              <img src="https://cdn-icons-png.flaticon.com/512/2910/2910818.png" alt="Testing" class="w-40 mx-auto">
+            </div>
+          </div>
+          <!-- Step 4 -->
+          <div class="flex flex-col md:flex-row items-center fade-in">
+            <div class="md:w-1/2 order-2 md:order-1">
+              <img src="https://cdn-icons-png.flaticon.com/512/2910/2910760.png" alt="Deployment" class="w-40 mx-auto">
+            </div>
+            <div class="md:w-1/2 md:pl-8 order-1 md:order-2 text-left">
+              <div class="inline-block bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl mb-4">4</div>
+              <h3 class="text-2xl font-semibold">Deployment & Support</h3>
+              <p class="text-gray-600">We deploy your solution and provide ongoing support and improvements.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Team Section -->
+  <section id="team" class="py-28 bg-gray-50" data-aos="fade-up">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-indigo-700 mb-16">Meet Our Team</h2>
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+          <img src="/images/essam.jpg" alt="Essam" class="w-24 h-24 mx-auto rounded-full mb-4">
+          <h3 class="text-xl font-semibold">Essam</h3>
+          <p class="text-gray-600">ML Engineer </p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+          <img src="/images/youssef.jpg" alt="Youssef" class="w-24 h-24 mx-auto rounded-full mb-4">
+          <h3 class="text-xl font-semibold">Youssef</h3>
+          <p class="text-gray-600">Full-Stack Developer</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+          <img src="/images/ahmed.jpg" alt="Ahmed" class="w-24 h-24 mx-auto rounded-full mb-4">
+          <h3 class="text-xl font-semibold">Ahmed</h3>
+          <p class="text-gray-600">Java & Cloud Developer</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+          <img src="/images/sherif.jpg" alt="Sherif" class="w-24 h-24 mx-auto rounded-full mb-4">
+          <h3 class="text-xl font-semibold">Sherif</h3>
+          <p class="text-gray-600"> Python Developer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases Section -->
+  <section id="use-cases" class="py-28 bg-white" data-aos="fade-up">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-indigo-700 text-center mb-16">Use Cases</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+          <h3 class="text-2xl font-semibold mb-4">Customer Support</h3>
+          <p class="text-gray-600">Automate responses by retrieving data from your knowledge base and generating human-like answers.</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+          <h3 class="text-2xl font-semibold mb-4">Legal Tech</h3>
+          <p class="text-gray-600">Accelerate contract review by summarizing clauses and highlighting critical changes instantly.</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+          <h3 class="text-2xl font-semibold mb-4">Financial Insights</h3>
+          <p class="text-gray-600">Query financial reports in natural language to get quick insights from P&L and balance sheets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-28 bg-gray-100" data-aos="fade-up">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-indigo-700 mb-6">Contact Us</h2>
+      <p class="text-lg mb-6">Ready to transform your data access? Reach out to start your pilot.</p>
+      <p>Email: <a href="mailto:info@aisoftwaresolution.com" class="text-blue-600 hover:underline">info@aisoftwaresolution.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/company/aisoftwaresolution" class="text-blue-600 hover:underline">linkedin.com/company/aisoftwaresolution</a></p>
+    </div>
+  </section>
+
+
+    <!-- Footer -->
+  <footer class="bg-white border-t py-6 text-center text-gray-500 text-sm">
+    &copy; 2025 AI Software Solution. All rights reserved.
+  </footer>
+
+
+  <!-- AOS Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

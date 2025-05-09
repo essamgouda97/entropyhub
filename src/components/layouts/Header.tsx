@@ -1,5 +1,8 @@
+// components/layouts/Header.tsx
 'use client';
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 
 export type SectionRefs = {
   hero: React.RefObject<HTMLElement>;
@@ -20,24 +23,20 @@ interface HeaderProps {
 export default function Header({ scrollToSection, sections }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState<keyof SectionRefs>('vision');
-  const [showHeader, setShowHeader] = useState(true);
+  const [show, setShow] = useState(true);
 
-  // Scroll spy + header show/hide
+  // scroll spy + show/hide header
   useEffect(() => {
     let lastY = window.scrollY;
     const onScroll = () => {
-      const currentY = window.scrollY;
-      setShowHeader(lastY > currentY || currentY < 100);
-      lastY = currentY;
-
-      for (const [key, ref] of Object.entries(sections) as [keyof SectionRefs, React.RefObject<HTMLElement>][]) {
+      const cur = window.scrollY;
+      setShow(cur < lastY || cur < 100);
+      lastY = cur;
+      for (const [k, ref] of Object.entries(sections) as [keyof SectionRefs, React.RefObject<HTMLElement>][]) {
         const el = ref.current;
         if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 120 && rect.bottom > 120) {
-            setActive(key);
-            break;
-          }
+          const r = el.getBoundingClientRect();
+          if (r.top <= 120 && r.bottom > 120) setActive(k);
         }
       }
     };
@@ -45,13 +44,8 @@ export default function Header({ scrollToSection, sections }: HeaderProps) {
     return () => window.removeEventListener('scroll', onScroll);
   }, [sections]);
 
-  const handleClick = (key: keyof SectionRefs) => (e: React.MouseEvent) => {
-    e.preventDefault();
-    setMenuOpen(false);
-    scrollToSection(sections[key]);
-  };
-
   const navItems: [keyof SectionRefs, string][] = [
+    ['hero', 'Home'],
     ['vision', 'Vision'],
     ['whatIsRag', 'How It Works'],
     ['whyChooseUs', 'Why Us'],
@@ -61,62 +55,92 @@ export default function Header({ scrollToSection, sections }: HeaderProps) {
     ['contact', 'Contact'],
   ];
 
+  const toggleMenu = () => setMenuOpen((o) => !o);
+  const handleClick = (key: keyof SectionRefs) => {
+    setMenuOpen(false);
+    scrollToSection(sections[key]);
+  };
+
   return (
-    <header
-      className={`fixed w-full bg-white shadow-sm z-20 transition-transform duration-300 ${
-        showHeader ? 'translate-y-0' : '-translate-y-full'
-      }`}
+    <motion.header
+      initial={{ y: 0 }}
+      animate={{ y: show ? 0 : -110 }}
+      transition={{ duration: 0.3 }}
+      className="fixed w-full z-40 backdrop-blur-sm bg-white/80 shadow-sm"
     >
-      <nav className="container mx-auto flex items-center justify-between py-4 px-6">
-        {/* Logo / Title */}
-        <button onClick={handleClick('hero')} className="text-2xl font-bold text-indigo-700">
+      <div className="container mx-auto flex items-center justify-between px-6 py-3">
+        {/* Logo */}
+        <button
+          onClick={() => handleClick('hero')}
+          className="text-2xl font-extrabold text-indigo-600 focus:outline-none"
+        >
           AI Software Solution
         </button>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex gap-8">
+        <nav className="hidden md:flex space-x-8">
           {navItems.map(([key, label]) => (
-            <li key={key}>
-              <button
-                onClick={handleClick(key)}
-                className={`hover:text-blue-600 transition ${
-                  active === key ? 'text-blue-600 font-semibold' : ''
-                }`}
-              >
-                {label}
-              </button>
-            </li>
+            <button
+              key={key}
+              onClick={() => handleClick(key)}
+              className={`relative py-1 text-sm font-medium focus:outline-none transition-colors hover:text-indigo-600 ${
+                active === key ? 'text-indigo-600' : 'text-gray-700'
+              }`}
+            >
+              {label}
+              {active === key && (
+                <motion.span
+                  layoutId="underline"
+                  className="absolute left-0 bottom-0 h-0.5 w-full bg-indigo-500 rounded-full"
+                />
+              )}
+            </button>
           ))}
-        </ul>
+        </nav>
 
-        {/* Right Buttons */}
-        <div className="flex items-center">
+        {/* CTA & Mobile Hamburger */}
+        <div className="flex items-center space-x-4">
           <button
-            onClick={handleClick('contact')}
-            className="hidden md:inline-block bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700 transition mr-4"
+            onClick={() => handleClick('contact')}
+            className="hidden md:inline-block px-4 py-2 bg-indigo-600 text-white rounded-full font-medium hover:bg-indigo-700 transition"
           >
             Start Pilot
           </button>
-          <button className="md:hidden px-2 py-1" onClick={() => setMenuOpen((o) => !o)}>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 8h16M4 16h16" />
-            </svg>
+          <button
+            onClick={toggleMenu}
+            className="md:hidden p-2 text-gray-700 focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
+      </div>
 
-        {/* Mobile Menu */}
+      {/* Mobile Menu */}
+      <AnimatePresence>
         {menuOpen && (
-          <ul className="md:hidden absolute top-full left-0 w-full bg-white shadow mt-2 flex flex-col items-center gap-4 py-4">
-            {navItems.map(([key, label]) => (
-              <li key={key}>
-                <button onClick={handleClick(key)} className="hover:text-blue-600 transition">
-                  {label}
-                </button>
-              </li>
-            ))}
-          </ul>
+          <motion.nav
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-white/90 backdrop-blur-sm shadow-inner overflow-hidden"
+          >
+            <ul className="flex flex-col items-center gap-4 py-4">
+              {navItems.map(([key, label]) => (
+                <li key={key}>
+                  <button
+                    onClick={() => handleClick(key)}
+                    className="text-gray-800 text-base font-medium hover:text-indigo-600 transition"
+                  >
+                    {label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </motion.nav>
         )}
-      </nav>
-    </header>
+      </AnimatePresence>
+    </motion.header>
   );
 }

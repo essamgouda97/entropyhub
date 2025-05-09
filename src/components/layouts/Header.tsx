@@ -74,7 +74,7 @@ export default function Header({ scrollToSection, sections }: HeaderProps) {
           onClick={() => handleClick('hero')}
           className="text-2xl font-extrabold text-indigo-600 focus:outline-none"
         >
-          AI Software Solution
+          EntropyHub
         </button>
 
         {/* Desktop Nav */}

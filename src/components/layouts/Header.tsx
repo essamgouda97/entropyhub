@@ -1,124 +1,146 @@
+// components/layouts/Header.tsx
 'use client';
-import { useState, useEffect } from 'react';
-import Logo from '../ui/Logo';
-import MenuIcon from '@mui/icons-material/Menu';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
+
+export type SectionRefs = {
+  hero: React.RefObject<HTMLElement>;
+  vision: React.RefObject<HTMLElement>;
+  whatIsRag: React.RefObject<HTMLElement>;
+  whyChooseUs: React.RefObject<HTMLElement>;
+  implementation: React.RefObject<HTMLElement>;
+  team: React.RefObject<HTMLElement>;
+  useCases: React.RefObject<HTMLElement>;
+  contact: React.RefObject<HTMLElement>;
+};
 
 interface HeaderProps {
   scrollToSection: (section: React.RefObject<HTMLElement>) => void;
-  sections: {
-    problem: React.RefObject<HTMLElement>;
-    
-    services: React.RefObject<HTMLElement>;
-    
-    about: React.RefObject<HTMLElement>;
-
-    contact: React.RefObject<HTMLElement>;
-
-  };
+  sections: SectionRefs;
 }
 
-const Header = ({ scrollToSection, sections }: HeaderProps) => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+export default function Header({ scrollToSection, sections }: HeaderProps) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [active, setActive] = useState<keyof SectionRefs>('vision');
+  const [show, setShow] = useState(true);
 
-  const handleMenuToggle = () => {
-    setIsMobileMenuOpen((prev) => !prev);
-  };
-
+  // scroll spy + show/hide header
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const cur = window.scrollY;
+      setShow(cur < lastY || cur < 100);
+      lastY = cur;
+      for (const [k, ref] of Object.entries(sections) as [keyof SectionRefs, React.RefObject<HTMLElement>][]) {
+        const el = ref.current;
+        if (el) {
+          const r = el.getBoundingClientRect();
+          if (r.top <= 120 && r.bottom > 120) setActive(k);
+        }
       }
     };
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [sections]);
 
-    window.addEventListener('scroll', handleScroll);
+  const navItems: [keyof SectionRefs, string][] = [
+    ['hero', 'Home'],
+    ['vision', 'Vision'],
+    ['whatIsRag', 'How It Works'],
+    ['whyChooseUs', 'Why Us'],
+    ['implementation', 'Process'],
+    ['team', 'Team'],
+    ['useCases', 'Use Cases'],
+    ['contact', 'Contact'],
+  ];
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  const toggleMenu = () => setMenuOpen((o) => !o);
+  const handleClick = (key: keyof SectionRefs) => {
+    setMenuOpen(false);
+    scrollToSection(sections[key]);
+  };
 
   return (
-    <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-gradient-to-b from-black via-black to-transparent border-b border-zinc-500'
-          : 'bg-transparent'
-      }`}
+    <motion.header
+      initial={{ y: 0 }}
+      animate={{ y: show ? 0 : -110 }}
+      transition={{ duration: 0.3 }}
+      className="fixed w-full z-40 backdrop-blur-sm bg-white/80 shadow-sm"
     >
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#">
-          <Logo />
-        </a>
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-6 text-xl">
-          <button
-            onClick={() => scrollToSection(sections.services)}
-            className="text-white hover:scale-110"
-          >
-            Services
-          </button>
-          <button
-            onClick={() => scrollToSection(sections.about)}
-            className="text-white hover:scale-110"
-          >
-            About Us
-          </button>
-          <button
-            onClick={() => scrollToSection(sections.contact)}
-            className="text-white hover:scale-110"
-          >
-            Contact
-          </button>
+      <div className="container mx-auto flex items-center justify-between px-6 py-3">
+        {/* Logo */}
+        <button
+          onClick={() => handleClick('hero')}
+          className="text-2xl font-extrabold text-indigo-600 focus:outline-none"
+        >
+          EntropyHub
+        </button>
+
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex space-x-8">
+          {navItems.map(([key, label]) => (
+            <button
+              key={key}
+              onClick={() => handleClick(key)}
+              className={`relative py-1 text-sm font-medium focus:outline-none transition-colors hover:text-indigo-600 ${
+                active === key ? 'text-indigo-600' : 'text-gray-700'
+              }`}
+            >
+              {label}
+              {active === key && (
+                <motion.span
+                  layoutId="underline"
+                  className="absolute left-0 bottom-0 h-0.5 w-full bg-indigo-500 rounded-full"
+                />
+              )}
+            </button>
+          ))}
         </nav>
 
-        {/* Mobile Menu Icon */}
-        <div className="md:hidden">
+        {/* CTA & Mobile Hamburger */}
+        <div className="flex items-center space-x-4">
           <button
-            className="text-white focus:outline-none"
-            onClick={handleMenuToggle}
+            onClick={() => handleClick('contact')}
+            className="hidden md:inline-block px-4 py-2 bg-indigo-600 text-white rounded-full font-medium hover:bg-indigo-700 transition"
           >
-            <MenuIcon className="w-6 h-6" />
+            Start Pilot
+          </button>
+          <button
+            onClick={toggleMenu}
+            className="md:hidden p-2 text-gray-700 focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      {isMobileMenuOpen && (
-        <nav className="md:hidden shadow-md">
-          <ul className="space-y-4 px-6 py-4">
-            <li>
-              <button
-                onClick={() => scrollToSection(sections.services)}
-                className="text-white hover:scale-110"
-              >
-                Services
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => scrollToSection(sections.about)}
-                className="text-white hover:scale-110"
-              >
-                About Us
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => scrollToSection(sections.contact)}
-                className="text-white hover:scale-110"
-              >
-                Contact
-              </button>
-            </li>
-          </ul>
-        </nav>
-      )}
-    </header>
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.nav
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-white/90 backdrop-blur-sm shadow-inner overflow-hidden"
+          >
+            <ul className="flex flex-col items-center gap-4 py-4">
+              {navItems.map(([key, label]) => (
+                <li key={key}>
+                  <button
+                    onClick={() => handleClick(key)}
+                    className="text-gray-800 text-base font-medium hover:text-indigo-600 transition"
+                  >
+                    {label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </motion.nav>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
-};
-
-export default Header;
+}

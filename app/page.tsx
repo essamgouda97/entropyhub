@@ -5,14 +5,14 @@ import Header from '@/components/layouts/Header';
 import Footer from '@/components/layouts/Footer';
 import { useInView } from 'react-intersection-observer';
 
-const Hero = dynamic(() => import('@/components/sections/Hero'), { suspense: true });
-const Vision = dynamic(() => import('@/components/sections/Vision'), { suspense: true });
-const WhatIsRag = dynamic(() => import('@/components/sections/WhatIsRag'), { suspense: true });
-const WhyChooseUs = dynamic(() => import('@/components/sections/WhyChooseUs'), { suspense: true });
-const Implementation = dynamic(() => import('@/components/sections/Implementation'), { suspense: true });
-const Team = dynamic(() => import('@/components/sections/Team'), { suspense: true });
-const UseCases = dynamic(() => import('@/components/sections/UseCases'), { suspense: true });
-const Contact = dynamic(() => import('@/components/sections/Contact'), { suspense: true });
+const Hero = dynamic(() => import('@/components/sections/Hero'), { loading: () => <p>Loading...</p> });
+const Vision = dynamic(() => import('@/components/sections/Vision'), { loading: () => <p>Loading...</p> });
+const WhatIsRag = dynamic(() => import('@/components/sections/WhatIsRag'), { loading: () => <p>Loading...</p> });
+const WhyChooseUs = dynamic(() => import('@/components/sections/WhyChooseUs'), { loading: () => <p>Loading...</p> });
+const Implementation = dynamic(() => import('@/components/sections/Implementation'), { loading: () => <p>Loading...</p> });
+const Team = dynamic(() => import('@/components/sections/Team'), { loading: () => <p>Loading...</p> });
+const UseCases = dynamic(() => import('@/components/sections/UseCases'), { loading: () => <p>Loading...</p> });
+const Contact = dynamic(() => import('@/components/sections/Contact'), { loading: () => <p>Loading...</p> });
 
 export default function Home() {
   const heroRef = React.useRef<HTMLElement>(null);
@@ -38,7 +38,7 @@ export default function Home() {
       <div
         ref={(node) => {
           ref(node);
-          if (refProp) refProp.current = node;
+          if (refProp) (refProp as React.MutableRefObject<HTMLElement | null>).current = node;
         }}
         className={`scroll-mt-24 transition-all duration-700 ease-out transform ${
           inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'

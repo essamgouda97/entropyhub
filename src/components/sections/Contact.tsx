@@ -105,7 +105,7 @@ export default function Contact() {
               <div>
                 <label className="block text-gray-300 text-sm font-medium mb-2">Message</label>
                 <textarea
-                  rows="4"
+                  rows={4}
                   className="w-full px-4 py-3 bg-white/5 rounded-lg border border-white/10 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/20 transition-all text-gray-200 placeholder-gray-400"
                   placeholder="Transmit your query..."
                 ></textarea>

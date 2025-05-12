@@ -87,7 +87,7 @@ export default function EnterpriseAI() {
     setIsMounted(true);
     const interval = setInterval(() => {
       setSelectedIndex((prev) => (prev + 1) % steps.length);
-    }, 26000);
+    }, 36000);
     return () => clearInterval(interval);
   }, []);
 
@@ -137,8 +137,7 @@ export default function EnterpriseAI() {
               </h2>
             </div>
             <p className="text-2xl text-gray-300 leading-relaxed">
-              We Transform your raw enterprise data into strategic foresight with our predictive intelligence platform
-              , Making it easier for your teams to retrieve information they need in real time.
+              We turn your enterprise data into actionable insights through our predictive intelligence platform—empowering your teams to access the information they need, exactly when they need it.
             </p>
           </motion.div>
 

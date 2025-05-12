@@ -20,7 +20,7 @@ export default function Vision() {
           Smarter Data, Faster Decisions
         </h2>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-20">
-          We help businesses unlock knowledge instantly using AI-powered retrieval. With RAG, teams work faster, stay focused, and make smarter decisions — without digging through endless documents.
+          We help businesses unlock knowledge instantly using AI-powered retrieval. With our Software Solutions, teams work faster, stay focused, and make smarter decisions — without digging through endless documents.
         </p>
 
         {/* Features */}

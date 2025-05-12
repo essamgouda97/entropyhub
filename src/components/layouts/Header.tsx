@@ -49,9 +49,9 @@ export default function Header({ scrollToSection, sections }: HeaderProps) {
     ['vision', 'Vision'],
     ['howItWorks', 'How It Works'],
     ['whyChooseUs', 'Why Us'],
-    ['implementation', 'Process'],
+    ['implementation', 'Implementation Process'],
     ['team', 'Team'],
-    ['useCases', 'Use Cases'],
+    ['OurWork', 'Our Work'],
     ['contact', 'Contact'],
   ];
 

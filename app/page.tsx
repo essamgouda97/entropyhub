@@ -11,7 +11,7 @@ const HowItWorks = dynamic(() => import('@/components/sections/HowItWorks'), { l
 const WhyChooseUs = dynamic(() => import('@/components/sections/WhyChooseUs'), { loading: () => <p>Loading...</p> });
 const Implementation = dynamic(() => import('@/components/sections/Implementation'), { loading: () => <p>Loading...</p> });
 const Team = dynamic(() => import('@/components/sections/Team'), { loading: () => <p>Loading...</p> });
-const UseCases = dynamic(() => import('@/components/sections/UseCases'), { loading: () => <p>Loading...</p> });
+const OurWork = dynamic(() => import('@/components/sections/OurWork'), { loading: () => <p>Loading...</p> });
 const Contact = dynamic(() => import('@/components/sections/Contact'), { loading: () => <p>Loading...</p> });
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
   const whyChooseUsRef = React.useRef<HTMLElement>(null);
   const implementationRef = React.useRef<HTMLElement>(null);
   const teamRef = React.useRef<HTMLElement>(null);
-  const useCasesRef = React.useRef<HTMLElement>(null);
+  const ourWorkRef = React.useRef<HTMLElement>(null);
   const contactRef = React.useRef<HTMLElement>(null);
 
   const scrollToSection = (section: React.RefObject<HTMLElement>) => {
@@ -60,7 +60,7 @@ export default function Home() {
           whyChooseUs: whyChooseUsRef,
           implementation: implementationRef,
           team: teamRef,
-          useCases: useCasesRef,
+          OurWork: ourWorkRef,
           contact: contactRef,
         }}
       />
@@ -72,7 +72,7 @@ export default function Home() {
           <Section refProp={whyChooseUsRef}><WhyChooseUs /></Section>
           <Section refProp={implementationRef}><Implementation /></Section>
           <Section refProp={teamRef}><Team /></Section>
-          <Section refProp={useCasesRef}><UseCases /></Section>
+          <Section refProp={ourWorkRef}><OurWork /></Section>
           <Section refProp={contactRef}><Contact /></Section>
         </Suspense>
       </main>

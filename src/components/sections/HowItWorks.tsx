@@ -133,11 +133,12 @@ export default function EnterpriseAI() {
             <div className="flex items-center gap-6 mb-12">
               <BrainCircuit className="w-16 h-16 text-emerald-400" />
               <h2 className="text-6xl font-bold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
-                AI Solutions
+                How AI can help your Business ?
               </h2>
             </div>
             <p className="text-2xl text-gray-300 leading-relaxed">
-              Transform raw enterprise data into strategic foresight with our predictive intelligence platform
+              We Transform your raw enterprise data into strategic foresight with our predictive intelligence platform
+              , Making it easier for your teams to retrieve information they need in real time.
             </p>
           </motion.div>
 

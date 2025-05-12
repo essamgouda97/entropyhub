@@ -43,9 +43,9 @@ export default function WhyChooseUs() {
             Why Choose EntropyHub
           </p>
           <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-slate-900 to-slate-800 bg-clip-text text-transparent mb-16">
-            Built for modern
+            Built for Impact,
             <br />
-            AI-driven teams
+            Chosen for Results
           </h2>
         </motion.div>
 

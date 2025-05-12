@@ -7,7 +7,7 @@ import { Menu, X } from 'lucide-react';
 export type SectionRefs = {
   hero: React.RefObject<HTMLElement>;
   vision: React.RefObject<HTMLElement>;
-  whatIsRag: React.RefObject<HTMLElement>;
+  howItWorks: React.RefObject<HTMLElement>;
   whyChooseUs: React.RefObject<HTMLElement>;
   implementation: React.RefObject<HTMLElement>;
   team: React.RefObject<HTMLElement>;
@@ -47,7 +47,7 @@ export default function Header({ scrollToSection, sections }: HeaderProps) {
   const navItems: [keyof SectionRefs, string][] = [
     ['hero', 'Home'],
     ['vision', 'Vision'],
-    ['whatIsRag', 'How It Works'],
+    ['howItWorks', 'How It Works'],
     ['whyChooseUs', 'Why Us'],
     ['implementation', 'Process'],
     ['team', 'Team'],

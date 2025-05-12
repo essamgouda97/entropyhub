@@ -5,14 +5,12 @@ import {
   BrainCircuit,
   Rocket,
   BarChartBig,
-  Factory,
-  Scale,
   Gavel,
   Microscope
-
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Tab } from '@headlessui/react';
+
 const iconComponents = {
   ingest: ScanSearch,
   analyze: BrainCircuit,
@@ -65,10 +63,9 @@ const steps: StepConfig[] = [
 
 const industryExamples = [
   {
-      icon: Microscope,
-      title: "Pharmaceutical Intelligence",
-      content: "Scan research papers, clinical trials, and patient feedback. AI highlights key results, flags anomalies, and predicts promising drug interactions.",
-      color: "from-pink-500 to-red-500",
+    icon: Microscope,
+    title: "Pharmaceutical Intelligence",
+    content: "Scan research papers, clinical trials, and patient feedback. AI highlights key results, flags anomalies, and predicts promising drug interactions.",
   },
   {
     icon: BarChartBig,
@@ -76,10 +73,9 @@ const industryExamples = [
     content: "Call center workforce optimization using AI-powered demand forecasting"
   },
   {
-      icon: Gavel,
-      title: "Legal Case Support",
-      content: "AI reads contracts and case files in seconds. It pulls out names, deadlines, and key clauses—then suggests relevant precedents.",
-      color: "from-yellow-500 to-orange-500",
+    icon: Gavel,
+    title: "Legal Case Support",
+    content: "AI reads contracts and case files in seconds. It pulls out names, deadlines, and key clauses—then suggests relevant precedents.",
   }
 ];
 
@@ -91,7 +87,7 @@ export default function EnterpriseAI() {
     setIsMounted(true);
     const interval = setInterval(() => {
       setSelectedIndex((prev) => (prev + 1) % steps.length);
-    }, 20000);
+    }, 26000);
     return () => clearInterval(interval);
   }, []);
 
@@ -126,48 +122,26 @@ export default function EnterpriseAI() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
-          {/* Title Section */}
+        {/* Title + Tabs Row */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 mb-24">
+          {/* Left Title Column */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-            className="lg:col-span-2 space-y-12"
+            className="lg:col-span-2"
           >
             <div className="flex items-center gap-6 mb-12">
               <BrainCircuit className="w-16 h-16 text-emerald-400" />
-              <h2 className="text-6xl font-bold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent pb-[0.2em]">
-                AI Integration
+              <h2 className="text-6xl font-bold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
+                AI Solutions
               </h2>
             </div>
-
             <p className="text-2xl text-gray-300 leading-relaxed">
               Transform raw enterprise data into strategic foresight with our predictive intelligence platform
             </p>
-
-            {/* Industry Examples */}
-            <div className="space-y-8 mt-16">
-              {industryExamples.map((example, idx) => {
-                const Icon = example.icon;
-                return (
-                  <motion.div
-                    key={idx}
-                    className="p-6 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10"
-                    whileHover={{ y: -5 }}
-                  >
-                    <div className="flex gap-4 items-start">
-                      <Icon className="w-8 h-8 text-emerald-400 flex-shrink-0" />
-                      <div>
-                        <h3 className="text-lg font-semibold text-white">{example.title}</h3>
-                        <p className="text-gray-400 mt-2">{example.content}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                )
-              })}
-            </div>
           </motion.div>
 
-          {/* Process Tabs */}
+          {/* Right Tabs Column */}
           <div className="lg:col-span-3">
             <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
               <Tab.List className="flex space-x-8 pb-8 border-b border-white/20">
@@ -236,6 +210,33 @@ export default function EnterpriseAI() {
                 </AnimatePresence>
               </Tab.Panels>
             </Tab.Group>
+          </div>
+        </div>
+
+        {/* Separate Use Cases Section */}
+        <div className="w-full text-center mt-32">
+          <h3 className="text-4xl font-bold bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent mb-16 pt-8">
+            Use Cases
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {industryExamples.map((example, idx) => {
+              const Icon = example.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  className="p-8 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10"
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="flex flex-col items-center text-center">
+                    <Icon className="w-12 h-12 text-emerald-400 mb-4" />
+                    <h3 className="text-xl font-semibold text-white mb-3">
+                      {example.title}
+                    </h3>
+                    <p className="text-gray-400">{example.content}</p>
+                  </div>
+                </motion.div>
+              )
+            })}
           </div>
         </div>
       </div>

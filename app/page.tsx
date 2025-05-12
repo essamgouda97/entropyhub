@@ -7,7 +7,7 @@ import { useInView } from 'react-intersection-observer';
 
 const Hero = dynamic(() => import('@/components/sections/Hero'), { loading: () => <p>Loading...</p> });
 const Vision = dynamic(() => import('@/components/sections/Vision'), { loading: () => <p>Loading...</p> });
-const WhatIsRag = dynamic(() => import('@/components/sections/WhatIsRag'), { loading: () => <p>Loading...</p> });
+const HowItWorks = dynamic(() => import('@/components/sections/HowItWorks'), { loading: () => <p>Loading...</p> });
 const WhyChooseUs = dynamic(() => import('@/components/sections/WhyChooseUs'), { loading: () => <p>Loading...</p> });
 const Implementation = dynamic(() => import('@/components/sections/Implementation'), { loading: () => <p>Loading...</p> });
 const Team = dynamic(() => import('@/components/sections/Team'), { loading: () => <p>Loading...</p> });
@@ -17,7 +17,7 @@ const Contact = dynamic(() => import('@/components/sections/Contact'), { loading
 export default function Home() {
   const heroRef = React.useRef<HTMLElement>(null);
   const visionRef = React.useRef<HTMLElement>(null);
-  const whatIsRagRef = React.useRef<HTMLElement>(null);
+  const howItWorksRef = React.useRef<HTMLElement>(null);
   const whyChooseUsRef = React.useRef<HTMLElement>(null);
   const implementationRef = React.useRef<HTMLElement>(null);
   const teamRef = React.useRef<HTMLElement>(null);
@@ -56,7 +56,7 @@ export default function Home() {
         sections={{
           hero:     heroRef,
           vision: visionRef,
-          whatIsRag: whatIsRagRef,
+          howItWorks: howItWorksRef,
           whyChooseUs: whyChooseUsRef,
           implementation: implementationRef,
           team: teamRef,
@@ -68,7 +68,7 @@ export default function Home() {
         <Suspense fallback={<div>Loading...</div>}>
           <Section refProp={heroRef}><Hero /></Section>
           <Section refProp={visionRef}><Vision /></Section>
-          <Section refProp={whatIsRagRef}><WhatIsRag /></Section>
+          <Section refProp={howItWorksRef}><HowItWorks /></Section>
           <Section refProp={whyChooseUsRef}><WhyChooseUs /></Section>
           <Section refProp={implementationRef}><Implementation /></Section>
           <Section refProp={teamRef}><Team /></Section>

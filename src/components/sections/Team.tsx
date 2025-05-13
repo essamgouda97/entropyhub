@@ -25,7 +25,7 @@ const teamMembers = [
   },
   {
     name: 'Ahmed',
-    role: 'Head of Cloud Development',
+    role: 'role',
     bio: 'Ahmed BIO',
     image: '/ahmed.jpg', // Make sure this image exists in public folder
     socialLinks: {
@@ -35,7 +35,7 @@ const teamMembers = [
   },
   {
     name: 'Yosif',
-    role: 'Head of Marketing Strategy',
+    role: 'role',
     bio: 'Yosif BIO',
     image: '/yosif.jpg', // Make sure this image exists in public folder
     socialLinks: {

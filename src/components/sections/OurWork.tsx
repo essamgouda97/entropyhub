@@ -31,7 +31,7 @@ export default function EnterpriseExperience() {
           className="text-center mb-12"
         >
           <p className="text-sm font-semibold uppercase tracking-wider mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Our Experience
+            What We have done so Far
           </p>
           <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent pb-2">
             Trusted by Leading Enterprises

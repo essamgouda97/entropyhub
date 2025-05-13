@@ -6,21 +6,21 @@ const teamMembers = [
   {
     name: 'Sherif',
     role: 'CEO & Co-Founder',
-    bio: 'Sherif BIO.',
+    bio: ' Bringing years of experience as a Pipeline Developer for leading animation and VFX studios, including contributions to major feature films like Mufasa: The Lion King. Sherif has a strong technical foundation and a passion for innovation. Outside the tech world, Sherif is also a former professional national athlete, blending discipline and performance into every aspect of his work..',
     image: '/sherif.jpeg', // Make sure this image exists in public folder
     socialLinks: {
       linkedin: 'https://www.linkedin.com/in/sherif-essam-9522a0103/',
-      twitter: 'https://twitter.com/sherif',
+
     },
   },
   {
     name: 'Essam',
     role: 'CTO & Co-Founder',
-    bio: 'Essam leads the technical strategy, ensuring we always stay ahead of the curve in technology.',
+    bio: 'a seasoned Machine Learning Engineer with deep expertise in artificial intelligence and large-scale AI system design. Known for implementing and architecting advanced Retrieval-Augmented Generation (RAG) pipelines, Essam’s work has been recognized in Silicon Valley for pushing the boundaries of intelligent data systems. His strategic vision and technical leadership drive the innovation behind the company’s AI-powered platforms.',
     image: '/essam.jpg', // Make sure this image exists in public folder
     socialLinks: {
       linkedin: 'https://www.linkedin.com/in/essamgouda/',
-      twitter: 'https://twitter.com/alice',
+
     },
   },
   {
@@ -30,7 +30,7 @@ const teamMembers = [
     image: '/ahmed.jpg', // Make sure this image exists in public folder
     socialLinks: {
       linkedin: 'https://www.linkedin.com/in/ahmed-abouelnasr-4965a7137/',
-      twitter: 'https://twitter.com/bob',
+
     },
   },
   {
@@ -40,7 +40,7 @@ const teamMembers = [
     image: '/yosif.jpg', // Make sure this image exists in public folder
     socialLinks: {
       linkedin: 'https://www.linkedin.com/in/yosif-elessawi/?originalSubdomain=eg',
-      twitter: 'https://twitter.com/eve',
+
     },
   },
 ];
@@ -85,12 +85,12 @@ export default function Team() {
                     <FaLinkedin className="w-5 h-5" />
                   </a>
                   <a
-                    href={member.socialLinks.twitter}
+
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-400 hover:text-blue-600 transition-colors"
                   >
-                    <FaTwitter className="w-5 h-5" />
+
                   </a>
                 </div>
               </div>

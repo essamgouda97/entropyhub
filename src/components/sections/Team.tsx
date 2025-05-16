@@ -16,7 +16,7 @@ const teamMembers = [
   {
     name: 'Essam',
     role: 'CTO & Co-Founder',
-    bio: 'a seasoned Machine Learning Engineer with deep expertise in artificial intelligence and large-scale AI system design. Known for implementing and architecting advanced Retrieval-Augmented Generation (RAG) pipelines, Essam’s work has been recognized in Silicon Valley for pushing the boundaries of intelligent data systems. His strategic vision and technical leadership drive the innovation behind the company’s AI-powered platforms.',
+    bio: 'A seasoned Machine Learning Engineer with deep expertise in artificial intelligence and large-scale AI system design. Known for implementing and architecting advanced Retrieval-Augmented Generation (RAG) pipelines, Essam’s work has been recognized in Silicon Valley for pushing the boundaries of intelligent data systems. His strategic vision and technical leadership drive the innovation behind the company’s AI-powered platforms.',
     image: '/essam.jpg', // Make sure this image exists in public folder
     socialLinks: {
       linkedin: 'https://www.linkedin.com/in/essamgouda/',
@@ -36,7 +36,7 @@ const teamMembers = [
   {
     name: 'Yosif',
     role: 'role',
-    bio: 'Yosif BIO',
+    bio: 'A software engineer and systems architect with a focus on building intelligent tools powered by AI agents. His work bridges product thinking and deep technical execution, enabling businesses to automate complex workflows, extract insights from data, and deliver smarter user experiences. He has led the development of multilingual AI assistants and agent-based automation platforms that eliminate manual bottlenecks and scale operational efficiency.',
     image: '/yosif.jpg', // Make sure this image exists in public folder
     socialLinks: {
       linkedin: 'https://www.linkedin.com/in/yosif-elessawi/?originalSubdomain=eg',

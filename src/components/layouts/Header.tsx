@@ -11,7 +11,7 @@ export type SectionRefs = {
   whyChooseUs: React.RefObject<HTMLElement>;
   implementation: React.RefObject<HTMLElement>;
   team: React.RefObject<HTMLElement>;
-  useCases: React.RefObject<HTMLElement>;
+  OurWork: React.RefObject<HTMLElement>;
   contact: React.RefObject<HTMLElement>;
 };
 

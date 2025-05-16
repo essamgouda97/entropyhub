@@ -36,7 +36,7 @@ const teamMembers = [
   {
     name: 'Yosif',
     role: 'role',
-    bio: 'A software engineer and systems architect with a focus on building intelligent tools powered by AI agents. His work bridges product thinking and deep technical execution, enabling businesses to automate complex workflows, extract insights from data, and deliver smarter user experiences. He has led the development of multilingual AI assistants and agent-based automation platforms that eliminate manual bottlenecks and scale operational efficiency.',
+    bio: 'A software engineer and systems architect with a focus on building intelligent tools powered by AI agents. Yosif work bridges product thinking and deep technical execution, enabling businesses to automate complex workflows, extract insights from data, and deliver smarter user experiences. Yosif has also led the development of multilingual AI assistants and agent-based automation platforms that eliminate manual bottlenecks and scale operational efficiency.',
     image: '/yosif.jpg', // Make sure this image exists in public folder
     socialLinks: {
       linkedin: 'https://www.linkedin.com/in/yosif-elessawi/?originalSubdomain=eg',

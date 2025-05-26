@@ -13,26 +13,26 @@ export default function Implementation() {
   const steps = [
     {
       icon: Search,
-      title: "Discovery Phase",
-      description: "Deep dive into your infrastructure needs and knowledge requirements",
+      title: "Understanding Your Business",
+      description: "We start with a collaborative session to learn about your operations, goals, and challenges. This helps us speak your language and align with your real needs.",
       color: "from-purple-500 to-indigo-500"
     },
     {
       icon: Settings,
-      title: "System Integration",
-      description: "Seamless RAG implementation with existing data pipelines and APIs",
+      title: "Analyze Data & Infrastructure",
+      description: "Our team reviews your existing systems, data sources, and workflows. We identify where AI can unlock value without disrupting what already works.",
       color: "from-teal-400 to-emerald-500"
     },
     {
       icon: TestTube2,
-      title: "Validation Testing",
-      description: "Comprehensive performance benchmarking and accuracy validation",
+      title: "Design the Right Solution",
+      description: "We architect a tailored AI solution—whether it's smart search, document automation, predictive insights, or workflow optimization—designed to plug into your ecosystem.",
       color: "from-blue-400 to-cyan-500"
     },
     {
       icon: Rocket,
-      title: "Production Launch",
-      description: "Full deployment with monitoring and ongoing optimization",
+      title: "Implement, Test & Support",
+      description: "From integration to rollout, we guide you every step. We test thoroughly, train your team if needed, and provide ongoing support to ensure long-term success.",
       color: "from-orange-400 to-rose-500"
     }
   ];
@@ -41,7 +41,7 @@ export default function Implementation() {
   const y2 = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
   return (
-    <section 
+    <section
       ref={ref}
       className="relative py-32 overflow-hidden bg-gradient-to-br from-slate-900 to-blue-900"
     >
@@ -73,11 +73,11 @@ export default function Implementation() {
       </div>
 
       {/* Floating Elements */}
-      <motion.div 
+      <motion.div
         style={{ y: y1 }}
         className="absolute top-20 left-20 w-48 h-48 bg-purple-500/10 rounded-full backdrop-blur-lg border border-purple-500/20"
       />
-      <motion.div 
+      <motion.div
         style={{ y: y2 }}
         className="absolute bottom-20 right-20 w-64 h-64 bg-blue-500/10 rounded-full backdrop-blur-lg border border-blue-500/20"
       />

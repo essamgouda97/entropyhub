@@ -5,42 +5,42 @@ import { FaLinkedin, FaTwitter } from 'react-icons/fa';
 const teamMembers = [
   {
     name: 'Sherif',
-    role: 'CEO & Co-Founder',
-    bio: 'Sherif BIO.',
+    role: 'Pipeline Developer/Co-Founder',
+    bio: ' Bringing years of experience as a Pipeline Developer for leading animation and VFX studios, including contributions to major feature films like Mufasa: The Lion King. Sherif has a strong technical foundation and a passion for innovation. Outside the tech world, Sherif is also a former professional national athlete, blending discipline and performance into every aspect of his work..',
     image: '/sherif.jpeg', // Make sure this image exists in public folder
     socialLinks: {
       linkedin: 'https://www.linkedin.com/in/sherif-essam-9522a0103/',
-      twitter: 'https://twitter.com/sherif',
+
     },
   },
   {
     name: 'Essam',
-    role: 'CTO & Co-Founder',
-    bio: 'Essam leads the technical strategy, ensuring we always stay ahead of the curve in technology.',
-    image: '/essam.jpg', // Make sure this image exists in public folder
+    role: 'Machine Learning Engineer/Co-Founder',
+    bio: 'A seasoned Machine Learning Engineer with deep expertise in artificial intelligence and large-scale AI system design. Known for implementing and architecting advanced Retrieval-Augmented Generation (RAG) pipelines, Essam’s work has been recognized in Silicon Valley for pushing the boundaries of intelligent data systems. His strategic vision and technical leadership drive the innovation behind the company’s AI-powered platforms.',
+    image: '/essam.jpg',
     socialLinks: {
       linkedin: 'https://www.linkedin.com/in/essamgouda/',
-      twitter: 'https://twitter.com/alice',
+
     },
   },
   {
     name: 'Ahmed',
-    role: 'Head of Cloud Development',
-    bio: 'Ahmed BIO',
+    role: 'Software Engineer/Co-Founder',
+    bio: 'Meet a results-driven Backend Engineer with multiple years of experience delivering scalable fintech microservices using Spring Boot, Kotlin, and AWS. Ahmed specializes in event-driven systems with Kafka, clean architecture, and performance optimization. At EJADA Systems, he led key automation and migration initiatives—cutting development time by 50% and streamlining AWS workflows. Currently, he is advancing his expertise in Cloud and DevOps Engineering through the prestigious Digital Egypt Builders Initiative while pursuing his AWS Developer Associate certification.',
     image: '/ahmed.jpg', // Make sure this image exists in public folder
     socialLinks: {
       linkedin: 'https://www.linkedin.com/in/ahmed-abouelnasr-4965a7137/',
-      twitter: 'https://twitter.com/bob',
+
     },
   },
   {
     name: 'Yosif',
-    role: 'Head of Marketing Strategy',
-    bio: 'Yosif BIO',
+    role: 'Computer Developer/Co-Founder',
+    bio: 'A software engineer and systems architect with a focus on building intelligent tools powered by AI agents. Yosif work bridges product thinking and deep technical execution, enabling businesses to automate complex workflows, extract insights from data, and deliver smarter user experiences. Yosif has also led the development of multilingual AI assistants and agent-based automation platforms that eliminate manual bottlenecks and scale operational efficiency.',
     image: '/yosif.jpg', // Make sure this image exists in public folder
     socialLinks: {
       linkedin: 'https://www.linkedin.com/in/yosif-elessawi/?originalSubdomain=eg',
-      twitter: 'https://twitter.com/eve',
+
     },
   },
 ];
@@ -85,12 +85,12 @@ export default function Team() {
                     <FaLinkedin className="w-5 h-5" />
                   </a>
                   <a
-                    href={member.socialLinks.twitter}
+
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-400 hover:text-blue-600 transition-colors"
                   >
-                    <FaTwitter className="w-5 h-5" />
+
                   </a>
                 </div>
               </div>

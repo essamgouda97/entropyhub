@@ -5,20 +5,20 @@ import { Rocket, Zap, LifeBuoy } from 'lucide-react';
 const features = [
   {
     icon: Rocket,
-    title: 'Seamless Integration',
-    description: 'Connect with your existing systems effortlessly using modern APIs and flexible architecture.',
+    title: 'Enterprise-Ready AI',
+    description: 'We’ve successfully integrated intelligent systems into real-world enterprise workflows, delivering tangible results with minimal friction.',
     color: 'from-purple-400 to-indigo-500'
   },
   {
     icon: Zap,
-    title: 'High Performance',
-    description: 'Experience fast, reliable data retrieval and intelligent generation at enterprise scale.',
+    title: 'Elite Engineering Team',
+    description: 'Our developers have been contracted by leading names like Disney, Marvel, and top Silicon Valley firms. We translate complexity into clarity — and ideas into action.',
     color: 'from-blue-400 to-cyan-500'
   },
   {
     icon: LifeBuoy,
-    title: 'Expert Support',
-    description: 'Get guidance from seasoned engineers to ensure smooth deployment and tailored solutions.',
+    title: 'Proven Delivery Track Record',
+    description: 'We don’t just promise outcomes — we deliver them. Whether it’s rapid deployment or tailored AI workflows, we meet client needs with precision and speed.',
     color: 'from-green-400 to-emerald-500'
   },
 ];
@@ -43,9 +43,9 @@ export default function WhyChooseUs() {
             Why Choose EntropyHub
           </p>
           <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-slate-900 to-slate-800 bg-clip-text text-transparent mb-16">
-            Built for modern
+            Built for Impact,
             <br />
-            AI-driven teams
+            Chosen for Results
           </h2>
         </motion.div>
 
